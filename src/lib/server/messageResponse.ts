@@ -1,4 +1,4 @@
-export const messageResponse = (message : string ) =>
-    JSON.stringify({
-        message,
-    })
+export const messageResponse = (message: string) =>
+	JSON.stringify({
+		message
+	});

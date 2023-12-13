@@ -1,5 +1,4 @@
-import { messageResponse } from '$lib/server/messageResponse'
+import { messageResponse } from '$lib/server/messageResponse';
 export function GET() {
-	return new Response(messageResponse('Running fine...'))
+	return new Response(messageResponse('Running fine...'));
 }
-
