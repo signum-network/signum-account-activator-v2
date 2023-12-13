@@ -1,4 +1,8 @@
-html {
+@import "bulma.min.css";
+@import "scrollbar.css";
+@import "variables.css";
+
+html, main {
     overflow: hidden !important;
 }
 

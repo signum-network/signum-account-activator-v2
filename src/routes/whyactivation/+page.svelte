@@ -1,25 +1,3 @@
-<script>
-    import { Amount, createDeeplink } from "@signumjs/util";
-
-    let donationAccount = 'S-9K9L-4CB5-88Y5-F5G4Z'
-    let hasCopied = false
-    let deeplink = createDeeplink({
-        action: 'pay',
-        payload: {
-            recipient: donationAccount,
-            amountPlanck: Amount.fromSigna(50).getPlanck(),
-            message: 'Buy you a beer 🍻',
-            messageIsText: true,
-        },
-    })
-
-    const copyAddress = () => {
-        navigator.clipboard.writeText(donationAccount)
-        hasCopied = true
-    }
-
-</script>
-
 <style>
     .center-text {
         text-align: center !important;
@@ -33,16 +11,15 @@
         max-height: 180px;
     }
 
-    @media (max-width: 400px ) {
-        .content img {
-            width: 112px;
-        }
+    #text {
+        max-height: 45vh;
+        overflow-y: scroll
     }
 
 </style>
 
 <svelte:head>
-    <title>Help ohager</title>
+    <title>Why Activation</title>
 </svelte:head>
 
 <section class="hero">
@@ -59,9 +36,11 @@
     <img src="accounts.png" alt="Account Representations in Signum">
 </figure>
 
-
-<section class="content has-text-justified has-text-white">
+<section class="content">
     <h3 class="has-text-warning has-text-centered">Never hodl funds in an account without an assigned public key!</h3>
+</section>
+
+<section id="text" class="content has-text-justified has-text-white">
     <h2 class="has-text-white">Anatomy of Signum Accounts</h2>
     <p>
         Signum is an account oriented blockchain (in contrast to UTXO based concepts like it used in Bitcoin). This concept is a more intuitive, as this is similar to common bank accounts. Other than in Ethereum, accounts in Signum can be identified by three different types: Public Key, Numerical ID, and the so called Reed-Solomon-Address.

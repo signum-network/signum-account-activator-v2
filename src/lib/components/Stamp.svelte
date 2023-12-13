@@ -1,5 +1,5 @@
 <script>
-    export let text
+    export let text = ""
 </script>
 
 <style>
@@ -14,7 +14,7 @@
         text-transform: uppercase;
         border-radius: 1rem;
         font-family: 'Courier', serif;
-        -webkit-mask-image: url('texture.png');
+        -webkit-mask-image: url($lib/assets/texture.png);
         -webkit-mask-size: 256px 256px;
     }
 

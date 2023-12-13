@@ -5,7 +5,6 @@ const logger = new InternalAxiomLogger({
     source: 'signum-activation-service',
     autoFlush: true,
 })
-console.debug('Axiom Logger initialized')
 
 interface LogObject {
     msg: string;
