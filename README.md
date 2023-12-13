@@ -1,3 +1,10 @@
+---
+
+⚠️ WORK IN PROGRESS ⚠️
+
+---
+
+
 # Signum Account Activator
 
 This is a web application (and service) to activate new [Signum](https://signum.network/) accounts.
