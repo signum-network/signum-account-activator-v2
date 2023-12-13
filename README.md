@@ -1,5 +1,11 @@
 # Signum Account Activator
 
+---
+
+⚠️ WORK IN PROGRESS ⚠️
+
+---
+
 This is a web application (and service) to activate new [Signum](https://signum.network/) accounts.
 
 A Signum account is considered active only, if it owns a public key. Usually, the public key is only available once the
