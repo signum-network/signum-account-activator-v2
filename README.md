@@ -11,9 +11,17 @@ though exists publicly. To turn from an _passive_ into an _active_ account the u
 This service sends the user a welcome message and by passing the user accounts public key the account gets activated.
 Doing so, the user does not need to create a transaction and the sending step can be omitted.
 
+---
+
+⚠️ NEVER HODL FUNDS IN NON-ACTIVATED ACCOUNTS! ⚠️
+
+---
+
 ## Anatomy of passphrases
 
-Before you obtain an account in Signum you have to generate a so called _passphrase_. This passphrase is used to _derive_ a set of one public and two **private** keys (sign and agreement).
+> Read also in the [official docs](https://docs.signum.network/signum/accounts)
+
+Before you obtain an account in Signum you have to generate a so-called _passphrase_. This passphrase is used to _derive_ a set of one public and two **private** keys (sign and agreement).
 The public key - technically the cryptographically hashed passphrase, is being decoded in an _almost_ unique number, which is used as _account id_.
 For better readability the account id is also encoded to a _Reed-Solomon-Address_ - that identifier starting with `S-`. Both are interchangeable, but do not reveal the original passphrase.  
 Although, it's possible to use any kind of string as passphrase, it's highly recommended to use a "random generator" (like in the Phoenix Wallet), because once created a passphrase it cannot be changed anymore.  
@@ -32,7 +40,7 @@ For security reasons, the activation service does not ask for the passphrase, be
 
 > The Phoenix wallet activates your account automatically on creation, but also offers the option to activate imported accounts
 
-If you have any question, don't hesitate to contact us on [discord](https://discord.gg/KWVbWJv), or open an [issue](https://github.com/ohager/burst-account-activator/issues/new)
+If you have any question, don't hesitate to contact us on [discord](https://discord.gg/KWVbWJv), or open an [issue](https://github.com/signum-network/signum-account-activator-v2/issues/new)
 
 # Developer Section
 
