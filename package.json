@@ -9,7 +9,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "prettier --check . && eslint .",
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"prepare": "husky install"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^2.0.0",
@@ -25,7 +26,8 @@
 		"svelte-check": "^3.6.0",
 		"tslib": "^2.4.1",
 		"typescript": "^5.0.0",
-		"vite": "^4.4.2"
+		"vite": "^4.4.2",
+		"husky": "^8.0.0"
 	},
 	"type": "module",
 	"dependencies": {
