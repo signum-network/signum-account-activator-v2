@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { fade } from 'svelte/transition';
 	import { Address } from '@signumjs/core';
-	import { HttpClientFactory, HttpError } from '@signumjs/http';
+	import { HttpClientFactory, type HttpError } from '@signumjs/http';
 	import { page } from '$app/stores';
 	import Stamp from '$lib/components/Stamp.svelte';
 

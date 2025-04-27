@@ -2,7 +2,7 @@ import { generateMasterKeys, getAccountIdFromPublicKey } from '@signumjs/crypto'
 import { Amount } from '@signumjs/util';
 import { AttachmentMessage, Address, LedgerClientFactory, type Ledger } from '@signumjs/core';
 import { config } from './config';
-import { Logger } from './logger';
+import { Logger } from '$lib/server/logger';
 
 const WelcomeMessage =
 	'Welcome to the Signum Network.👋 A truly decentralized, public, and sustainable blockchain platform. Have a look at https://docs.signum.network/ecosystem to find out more.';
@@ -120,7 +120,7 @@ export class ActivatorService {
 
 	async activate(account: string, publicKey: string) {
 		const accountId = Address.create(account).getNumericId();
-		await this.__validateAddressKeyPair(accountId, publicKey);
+		this.__validateAddressKeyPair(accountId, publicKey);
 		await this.__validateAccount(accountId);
 		await this.__validatePendingActivation(accountId);
 		if (config.activationAmount === 0) {

@@ -14,7 +14,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		} catch (e) {
 			const status = 400;
 			const msg = 'Field [account] is not a valid Signum address.';
-			Logger.logError({ msg, status });
+			Logger.logError({ msg, status, data: body });
 			throw error(status, msg);
 		} finally {
 			await Logger.flush();
@@ -32,7 +32,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		} catch (e: any) {
 			const status = 400;
 			const msg = e.message;
-			Logger.logError({ msg, status });
+			Logger.logError({ msg, status, data: body });
 			throw error(status, msg);
 		} finally {
 			await Logger.flush();
@@ -40,7 +40,7 @@ export const POST: RequestHandler = async ({ request }) => {
 	} else {
 		const msg = 'Missing fields [account] and/or [publickey]';
 		const status = 400;
-		Logger.logError({ msg, status });
+		Logger.logError({ msg, status, data: body });
 		await Logger.flush();
 		throw error(status, msg);
 	}
