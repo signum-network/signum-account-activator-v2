@@ -39,10 +39,10 @@
 			title="Copy Address">{hasCopied ? '✅' : '📋'}</span
 		>
 	</h3>
-	<small class="has-text-white is-clickable">
-		Did you know? When XT Wallet is installed, you can select any Account Address on a web page,
-		right-click, and use the Signum menu to open the explorer or send funds to the selected account.
-	</small>
+	<!--	<small class="has-text-white is-clickable">-->
+	<!--		Did you know? When XT Wallet is installed, you can select any Account Address on a web page,-->
+	<!--		right-click, and use the Signum menu to open the explorer or send funds to the selected account.-->
+	<!--	</small>-->
 </section>
 
 <style>
