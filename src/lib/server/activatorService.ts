@@ -1,4 +1,4 @@
-import { generateMasterKeys, getAccountIdFromPublicKey } from '@signumjs/crypto';
+import { generateSignKeys, getAccountIdFromPublicKey } from '@signumjs/crypto';
 import { Amount } from '@signumjs/util';
 import { AttachmentMessage, Address, LedgerClientFactory, type Ledger } from '@signumjs/core';
 import { config } from './config';
@@ -49,7 +49,7 @@ export class ActivatorService {
 	}
 
 	__getSenderCredentials() {
-		const keys = generateMasterKeys(config.accountSecret || '');
+		const keys = generateSignKeys(config.accountSecret || '');
 		return {
 			id: getAccountIdFromPublicKey(keys.publicKey),
 			...keys
