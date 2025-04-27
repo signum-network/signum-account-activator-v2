@@ -1,13 +1,6 @@
 # Signum Account Activator
 
----
-
-⚠️ WORK IN PROGRESS ⚠️
-
----
-
 ![image](https://github.com/signum-network/signum-account-activator-v2/assets/3920663/e18dc11a-e73f-41eb-9373-40af3f063646)
-
 
 This is a web application (and service) to activate new [Signum](https://signum.network/) accounts.
 
@@ -55,7 +48,20 @@ If you have any question, don't hesitate to contact us on [discord](https://disc
 
 ## Developing
 
-Install dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Prerequisites
+
+This service is built with Sveltekit. A quick and easy way for deployment is [Vercel](https://vercel.com).
+Additionally, there's a dependency with [Upstash](https://upstash.com) for rate limiting, and an optional dependency
+with [Axiom](https://axiom.co) for logging.
+
+### Installation
+
+Install dependencies with `npm install` (or `pnpm install` or `yarn`),
+start a development server, copy the `.env.example` file to `.env` and set the env vars:
+
+```bash
+cp .env.example .env
+```
 
 ```bash
 npm run dev

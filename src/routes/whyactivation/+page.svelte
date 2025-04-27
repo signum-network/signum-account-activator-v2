@@ -1,3 +1,7 @@
+<script>
+	import accountImg from '$lib/assets/accounts.png';
+</script>
+
 <svelte:head>
 	<title>Why Activation</title>
 </svelte:head>
@@ -15,7 +19,7 @@
 </section>
 
 <figure class="center-text">
-	<img src="./accounts.png" alt="Account Representations in Signum" />
+	<img src={accountImg} alt="Account Representations in Signum" />
 </figure>
 
 <section class="content">
