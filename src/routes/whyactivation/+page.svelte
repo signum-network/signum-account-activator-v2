@@ -15,7 +15,7 @@
 </section>
 
 <figure class="center-text">
-	<img src="./accounts.png" alt="Account Representations in Signum" />
+	<img src="/accounts.png" alt="Account Representations in Signum" />
 </figure>
 
 <section class="content">
