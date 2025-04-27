@@ -1,4 +1,4 @@
-# Signum Account Activator
+# Signum Account Activator (Version 2)
 
 ![image](https://github.com/signum-network/signum-account-activator-v2/assets/3920663/e18dc11a-e73f-41eb-9373-40af3f063646)
 
