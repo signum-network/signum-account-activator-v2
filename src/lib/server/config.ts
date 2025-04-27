@@ -16,6 +16,12 @@ export const config = {
 	isTestnet: isTrue(process.env.TEST_NET || 'true'),
 	webUiAvailable: isTrue(process.env.WEB_UI || 'true'),
 	verboseLog: isTrue(process.env.VERBOSE_LOG || 'true'),
-	redisUrl: process.env.REDIS_URL,
-	logzIOApiKey: process.env.LOGZ_IO_SHIPPING_TOKEN
+	redisUrl: process.env.REDIS_URL || '',
+	logger: {
+		type: process.env.LOGGER_TYPE || 'console',
+		axiom: {
+			dataset: process.env.AXIOM_DATASET || '',
+			token: process.env.AXIOM_TOKEN || ''
+		}
+	}
 };

@@ -2,7 +2,7 @@ import { generateMasterKeys, getAccountIdFromPublicKey } from '@signumjs/crypto'
 import { Amount } from '@signumjs/util';
 import { AttachmentMessage, Address, LedgerClientFactory, type Ledger } from '@signumjs/core';
 import { config } from './config';
-import { Logger } from './logger';
+import { LoggerAxiom } from './loggerAxiom';
 
 const WelcomeMessage =
 	'Welcome to the Signum Network.👋 A truly decentralized, public, and sustainable blockchain platform. Have a look at https://docs.signum.network/ecosystem to find out more.';
@@ -26,7 +26,7 @@ export class ActivatorService {
 			const ctx = `ActivatorService.${fn.name}`;
 			// eslint-disable-next-line prefer-rest-params
 			const args = arguments;
-			Logger.verbose({
+			LoggerAxiom.verbose({
 				msg: 'ActivatorService',
 				ctx,
 				args
@@ -35,7 +35,7 @@ export class ActivatorService {
 				// @ts-ignore
 				return fn.apply(this, args);
 			} catch (e: any) {
-				Logger.verbose({ msg: e.message, ctx, args, err: e.message });
+				LoggerAxiom.verbose({ msg: e.message, ctx, args, err: e.message });
 				throw e;
 			}
 		};
@@ -120,7 +120,7 @@ export class ActivatorService {
 
 	async activate(account: string, publicKey: string) {
 		const accountId = Address.create(account).getNumericId();
-		await this.__validateAddressKeyPair(accountId, publicKey);
+		this.__validateAddressKeyPair(accountId, publicKey);
 		await this.__validateAccount(accountId);
 		await this.__validatePendingActivation(accountId);
 		if (config.activationAmount === 0) {
