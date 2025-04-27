@@ -2,7 +2,7 @@ import { generateMasterKeys, getAccountIdFromPublicKey } from '@signumjs/crypto'
 import { Amount } from '@signumjs/util';
 import { AttachmentMessage, Address, LedgerClientFactory, type Ledger } from '@signumjs/core';
 import { config } from './config';
-import { LoggerAxiom } from './loggerAxiom';
+import { Logger } from '$lib/server/logger';
 
 const WelcomeMessage =
 	'Welcome to the Signum Network.👋 A truly decentralized, public, and sustainable blockchain platform. Have a look at https://docs.signum.network/ecosystem to find out more.';
@@ -26,7 +26,7 @@ export class ActivatorService {
 			const ctx = `ActivatorService.${fn.name}`;
 			// eslint-disable-next-line prefer-rest-params
 			const args = arguments;
-			LoggerAxiom.verbose({
+			Logger.verbose({
 				msg: 'ActivatorService',
 				ctx,
 				args
@@ -35,7 +35,7 @@ export class ActivatorService {
 				// @ts-ignore
 				return fn.apply(this, args);
 			} catch (e: any) {
-				LoggerAxiom.verbose({ msg: e.message, ctx, args, err: e.message });
+				Logger.verbose({ msg: e.message, ctx, args, err: e.message });
 				throw e;
 			}
 		};
