@@ -3,22 +3,31 @@ import { config } from './config';
 // App configuration
 const options = {
 	verboseLog: config.verboseLog,
-	appName: 'signum-activator'
+	appName: 'signum-activator',
+	isDev: process.env.NODE_ENV !== 'production'
 };
 
-// Create the pino logger instance with pretty formatting
-const pinoLogger = pino({
-	level: options.verboseLog ? 'debug' : 'info',
-	transport: {
-		target: 'pino-pretty',
-		options: {
-			colorize: true
-		}
-	},
-	base: {
-		app: options.appName
-	}
-});
+// Create the pino logger instance with appropriate configuration for the environment
+// Use different logger configurations for development and production
+const pinoLogger = options.isDev
+	? pino({
+			level: config.verboseLog ? 'debug' : 'info',
+			transport: {
+				target: 'pino-pretty',
+				options: {
+					colorize: true
+				}
+			},
+			base: {
+				app: options.appName
+			}
+		})
+	: pino({
+			level: config.verboseLog ? 'debug' : 'info',
+			base: {
+				app: options.appName
+			}
+		});
 
 interface LogObject {
 	msg: string;
