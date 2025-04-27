@@ -1,6 +1,10 @@
 import { error, type RequestHandler } from '@sveltejs/kit';
 import { Address } from '@signumjs/core';
+import { Crypto } from '@signumjs/crypto';
+import { NodeJSCryptoAdapter } from '@signumjs/crypto/adapters';
 import { activatorService, Logger } from '$lib/server';
+
+Crypto.init(new NodeJSCryptoAdapter());
 
 export const POST: RequestHandler = async ({ request }) => {
 	const body = await request.json();
