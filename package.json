@@ -33,9 +33,9 @@
 	"type": "module",
 	"dependencies": {
 		"@axiomhq/js": "^1.3.1",
-		"@signumjs/core": "^1.0.0-rc.75",
-		"@signumjs/crypto": "^1.0.0-rc.75",
-		"@signumjs/util": "^1.0.0-rc.75",
+		"@signumjs/core": "^2.0.7",
+		"@signumjs/crypto": "^2.0.7",
+		"@signumjs/util": "^2.0.7",
 		"@upstash/ratelimit": "^2.0.5",
 		"@upstash/redis": "^1.34.8",
 		"dotenv": "^16.3.1",

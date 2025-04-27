@@ -1,18 +1,8 @@
 <script>
-	import { Amount, createDeeplink } from '@signumjs/util';
+	import ohagerAvatar from '$lib/assets/ohager_bat.png';
 
 	let donationAccount = 'S-9K9L-4CB5-88Y5-F5G4Z';
 	let hasCopied = false;
-	let deeplink = createDeeplink({
-		action: 'pay',
-		payload: {
-			recipient: donationAccount,
-			amountPlanck: Amount.fromSigna(50).getPlanck(),
-			message: 'Buy you a beer 🍻',
-			messageIsText: true
-		}
-	});
-
 	const copyAddress = () => {
 		navigator.clipboard.writeText(donationAccount);
 		hasCopied = true;
@@ -37,7 +27,7 @@
 
 <section class="content center-text">
 	<figure>
-		<img src="ohager_bat.png" alt="Signum Network Member ohager" />
+		<img src={ohagerAvatar} alt="Signum Network Member ohager" />
 	</figure>
 	<h3 class="has-text-white is-clickable">
 		{donationAccount}
@@ -49,12 +39,10 @@
 			title="Copy Address">{hasCopied ? '✅' : '📋'}</span
 		>
 	</h3>
-	<div class="is-flex is-flex-direction-column center-text">
-		<a class="m-4" href={deeplink}>
-			<button class="button is-primary is-large">Donate</button>
-		</a>
-		<a class="has-text-white mt-2" href="/">Back</a>
-	</div>
+	<small class="has-text-white is-clickable">
+		Did you know? When XT Wallet is installed, you can select any Account Address on a web page,
+		right-click, and use the Signum menu to open the explorer or send funds to the selected account.
+	</small>
 </section>
 
 <style>
